@@ -2,7 +2,6 @@
 @use 'mixins';
 
 .thanks-section {
-  display: none;
   @include mixins.containerFeatures;
   padding: 150px 25px 40px;
   display: grid;
@@ -34,7 +33,6 @@
     height: 60px;
   }
   @media (min-width: v.$desktop) {
-    display: none;
     width: 510px;
     height: 520px;
     border-radius: 40px;

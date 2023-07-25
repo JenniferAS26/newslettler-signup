@@ -2,7 +2,6 @@
 @use 'mixins';
 
 .main-content {
-  display: block;
   @include mixins.containerFeatures;
   &__image-container {
     width: inherit;
@@ -41,7 +40,7 @@
   }
   .form {
     display: grid;
-    grid-template-rows: repeat(2, 60px);
+    grid-template-rows: 60px 10px 60px;
     gap: 20px;
     &__label {
       display: block;
@@ -55,9 +54,10 @@
       border-radius: 10px;
       padding: 21px 25px;
       height: 55px;
+      z-index: 1;
       &::placeholder {
         color: v.$Grey-dark;
-        font-size: 1.6rem;
+        font-size: 1.8rem;
       }
       &:focus {
         outline: 1px solid v.$Dark-Slate-Grey;
@@ -65,6 +65,7 @@
     }
     &__button {
       @include mixins.buttonStyle;
+      height: 60px;
     }
   }
   @media (min-width: v.$desktop) {
@@ -112,6 +113,8 @@
 
 .error {
   color: v.$Tomato;
-  margin: -18px 0 20px;
-  font-size: 0.9rem;
+  margin: -108px 0 5px;
+  font-size: 1.4rem;
+  font-weight: v.$bold-weight;
+  text-align: right;
 }
