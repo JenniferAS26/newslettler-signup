@@ -1,0 +1,50 @@
+@use 'variables' as v;
+@use 'mixins';
+
+.thanks-section {
+  display: none;
+  @include mixins.containerFeatures;
+  padding: 150px 25px 40px;
+  display: grid;
+  align-content: space-between;
+  &__info-container {
+    color: v.$Dark-Slate-Grey;
+    display: grid;
+    grid-template-rows: 110px 110px 100px;
+    img {
+      width: 65px;
+      margin-bottom: 45px;
+    }
+  }
+  &__title {
+    font-size: 4rem;
+    font-weight: v.$bold-weight;
+    line-height: 1;
+  }
+  &__text {
+    font-size: 1.7rem;
+    font-weight: v.$regular-weight;
+    line-height: 1.5;
+    span {
+      font-weight: v.$bold-weight;
+    }
+  }
+  &__button {
+    @include mixins.buttonStyle;
+    height: 60px;
+  }
+  @media (min-width: v.$desktop) {
+    display: none;
+    width: 510px;
+    height: 520px;
+    border-radius: 40px;
+    padding: 50px 65px 65px;
+    margin: 180px auto;
+    &__title {
+      font-size: 5rem;
+    }
+    &__text {
+      padding-top: 15px;
+    }
+  }
+}

@@ -1,9 +1,9 @@
 @use 'variables' as v;
+@use 'mixins';
 
 .main-content {
-  width: v.$mobile;
-  margin: 0 auto;
-  background-color: v.$White;
+  display: block;
+  @include mixins.containerFeatures;
   &__image-container {
     width: inherit;
     height: 290px;
@@ -64,23 +64,7 @@
       }
     }
     &__button {
-      cursor: pointer;
-      border: none;
-      border-radius: 10px;
-      font-size: 1.5rem;
-      font-weight: v.$bold-weight;
-      letter-spacing: 0.6px;
-      color: v.$White;
-      background-color: v.$Dark-Slate-Grey;
-      text-align: center;
-      transition: .5s;
-      background-size: 200% auto;
-      display: block;
-      &:hover {
-        color: v.$White;
-        background-image: linear-gradient(to right, #ff6d2f 0%, #DD2476 51%, #ff6d2f 100%);
-        box-shadow: 2px 12px 20px 1px rgba(#DD2476, $alpha: 0.4);
-      }
+      @include mixins.buttonStyle;
     }
   }
   @media (min-width: v.$desktop) {
