@@ -1,5 +1,5 @@
 let subscribeButton =  document.querySelector('.form__button');
-let dimissButton = document.querySelector('.thanks-section__button')
+let dismissButton = document.querySelector('.thanks-section__button')
 let principalContainer = document.querySelector('.main-content');
 let thanksSectionContainer = document.querySelector('.thanks-section');
 
@@ -18,13 +18,12 @@ emailInput.addEventListener('input', e => {
 
 subscribeButton.addEventListener('click', e => {
   e.preventDefault();
-  console.log('click subscribe button')
   verifyFilled(emailInput, emailErrorDiv);
   principalContainer.style.display = 'none';
   thanksSectionContainer.style.display = 'grid';
 });
 
-dimissButton.addEventListener('click', () => {
+dismissButton.addEventListener('click', () => {
   if (window.innerWidth >= 1440) {
     principalContainer.style.display = 'flex';
   }
@@ -44,9 +43,7 @@ const showError = (divInput, divError, errorMessage, show = true) => {
 const verifyFilled = (divInput, divError) => {
   if (divInput.value.length > 0) {
     showError(divInput, divError, '', false);
-    
   } else {
-    showError(divInput, divError, 'This field can be empty');
-    
+    showError(divInput, divError, 'This field cannot be empty');
   }
 }
